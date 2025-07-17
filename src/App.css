@@ -57,3 +57,10 @@
   float: left;
   margin-right: 20px;
 }
+
+#login-form {
+  width: 300px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 50px auto;
+}

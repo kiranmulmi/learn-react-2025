@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router";
+import { doLogin } from '../../services/auth';
+
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [loginError, setLoginError] = useState('');
 
   const handleEmailChange = (e) => {
     const inputEmail = e.target.value;
@@ -18,15 +23,29 @@ const Login = () => {
 
   // Handle Form Submission
   const handleBtnClick = () => {
+    let error = false;
     if (email === '') {
-      emailError = "Email is required";
+      setEmailError("Email is required");
+      error = true;
+    } else if (password === '') {
+      setPasswordError("Password is required");
+      error = true;
     }
-    console.log('Email', email);
-    console.log('Password', password);
+
+    if (error) {
+      return;
+    }
+    const loginStatus = doLogin(email, password);
+    if (loginStatus) {
+      navigate('/admin/dashboard');
+    } else {
+      setLoginError('Invalid email or password');
+    }
+
   }
   return (
     <div>
-      <div>
+      <div id="login-form">
         <h2>Admin Login</h2>
         <div>
           <label>Email</label>
@@ -45,7 +64,10 @@ const Login = () => {
             placeholder=""
             onChange={(e) => handlePasswordChange(e)}
             value={password} />
+            <div style={{color: 'red'}}>{passwordError}</div>
         </div>
+        <div style={{color: 'red'}}>{loginError}</div>
+        <br/>
         <button type='button' onClick={() => handleBtnClick()}>Login</button>
       </div>
     </div>
