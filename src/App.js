@@ -5,6 +5,7 @@ import Dashboard from './pages/backend/Dashboard';
 import AdminLayout from './components/backend/AdminLayout';
 import ContactUs from './pages/frontend/ContactUs';
 import Layout from './components/frontend/Layout';
+import Login from './pages/backend/Login';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             
 
             {/* Admin Routes */}
+            <Route path="admin/login" element={<Login />}/>
             <Route path="/admin" element={<AdminLayout />}>
               <Route path="/admin/dashboard" element={<Dashboard />} />
             </Route>
