@@ -49,26 +49,29 @@ const Login = () => {
         <h2>Admin Login</h2>
         <div>
           <label>Email</label>
-          <input 
-            type="text" 
-            placeholder="Enter your email"
-            onChange={(e) => handleEmailChange(e)}
-            value={email} />
-            <div style={{color: 'red'}}>{emailError}</div>
+          <div>
+            <input 
+              type="text"
+              onChange={(e) => handleEmailChange(e)}
+              value={email} />
+          </div>
+          <div style={{color: 'red'}}>{emailError}</div>
         </div>
         <br/>
         <div>
           <label>Password</label>
-          <input 
-            type="password" 
-            placeholder=""
-            onChange={(e) => handlePasswordChange(e)}
-            value={password} />
-            <div style={{color: 'red'}}>{passwordError}</div>
+          <div>
+            <input 
+              type="password" 
+              placeholder=""
+              onChange={(e) => handlePasswordChange(e)}
+              value={password} />
+              <div style={{color: 'red'}}>{passwordError}</div>
+          </div>  
         </div>
         <div style={{color: 'red'}}>{loginError}</div>
         <br/>
-        <button type='button' onClick={() => handleBtnClick()}>Login</button>
+        <button type='button' onClick={() => handleBtnClick()} className='btn-primary'>Login</button>
       </div>
     </div>
   );

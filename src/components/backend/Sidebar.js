@@ -3,10 +3,13 @@ const Sidebar = () => {
   return (
     <>
       <div class="col sidebar">
-        <ul>
-          <li><NavLink to="/admin/dashboard">Dashboard</NavLink></li>
-          <li><NavLink to="/admin/student">Student</NavLink></li>
-        </ul>
+        <h2>Admin Menu</h2>
+        <div>
+          <ul>
+            <li><NavLink to="/admin/dashboard">Dashboard</NavLink></li>
+            <li><NavLink to="/admin/blog">Blog</NavLink></li>
+          </ul>
+        </div>
       </div>
     </>
   );

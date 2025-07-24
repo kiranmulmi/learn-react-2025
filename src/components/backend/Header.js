@@ -11,7 +11,7 @@ const Header = () => {
     <div class="row">
       <div class="header">
         <h2>Header</h2>
-        <div><button onClick={() => handleBtnClick()}>Logout</button></div>
+        <div><button onClick={() => handleBtnClick()} className="btn-danger">Logout</button></div>
       </div>
     </div>
   );
