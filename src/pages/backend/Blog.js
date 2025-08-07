@@ -1,23 +1,17 @@
+import { useEffect, useState } from "react";
 import BlogRow from "../../components/backend/BlogRow";
 import { NavLink } from "react-router";
+import { getAllBlogs } from "../../services/blog";
 
 const Blog = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'blog 1',
-      description: 'blog 1 description',
-      author: 'admin',
-      created: '2025-07-18'
-    },
-    {
-      id: 2,
-      title: 'blog 2',
-      description: 'blog 2 description',
-      author: 'admin',
-      created: '2025-07-18'
-    }
-  ];
+
+  const [blogs, setBlogs] = useState([]);
+  
+  useEffect(() => {
+    const data = getAllBlogs()
+    setBlogs(data);
+  }, []);
+
   return(
     <>
       <div>
@@ -36,7 +30,7 @@ const Blog = () => {
               </tr>
             </thead>
             <tbody>
-              <BlogRow blogData={data}/>
+              <BlogRow blogData={blogs}/>
             </tbody>
           </table>
         </div>

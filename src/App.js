@@ -28,6 +28,7 @@ function App() {
               <Route path="/admin/dashboard" element={<Dashboard />} />
               <Route path="/admin/blog" element={<Blog />} />
               <Route path="/admin/blog/create" element={<BlogForm />} />
+              <Route path="/admin/blog/edit/:id" element={<BlogForm />} />
             </Route>
           </Routes>
       </BrowserRouter>

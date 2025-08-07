@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import { getBlogById } from "../../services/blog";
 
 const BlogForm = () => {
-
+  const { id } = useParams();
+  
   const [data, setData] = useState({
     title: '',
     content: '',
@@ -13,9 +16,23 @@ const BlogForm = () => {
     setData({...data,[name]: value});
   }
 
+  useEffect(() => {
+    if (id) {
+      const blog = getBlogById(id);
+      setData(
+        {
+          ...data,
+          title: blog.title,
+          content: blog.content,
+        }
+      );
+    }
+  }, [])
+
   return (
     <div>
-      <h1>Blog Form</h1>
+      { id && <h1>Edit Blog</h1>}
+      { !id && <h1>Create Blog</h1>}
 
       <div>
         <label htmlFor="title">Title</label>

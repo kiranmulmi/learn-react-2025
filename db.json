@@ -1,0 +1,42 @@
+{
+  "blogs": [
+    {
+      "title": "abc",
+      "content": "abc content",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "title": "another title 2",
+      "content": "some other content"
+    },
+    {
+      "id": "3",
+      "title": "another title 3",
+      "content": "some other content"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@doe.com",
+      "password": "123456",
+      "phone": "12344567"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "email": "jane@doe.com",
+      "password": "123456",
+      "phone": "12344567"
+    },
+    {
+      "id": "3",
+      "name": "Jim Doe",
+      "email": "jim@doe.com",
+      "password": "123456",
+      "phone": "12344567"
+    }
+  ]
+}
