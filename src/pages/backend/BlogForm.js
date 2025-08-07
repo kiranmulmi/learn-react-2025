@@ -18,14 +18,15 @@ const BlogForm = () => {
 
   useEffect(() => {
     if (id) {
-      const blog = getBlogById(id);
-      setData(
-        {
-          ...data,
-          title: blog.title,
-          content: blog.content,
-        }
-      );
+      getBlogById(id).then((response) => {
+        setData(
+          {
+            ...data,
+            title: response.title,
+            content: response.content,
+          }
+        );
+      });
     }
   }, [])
 
