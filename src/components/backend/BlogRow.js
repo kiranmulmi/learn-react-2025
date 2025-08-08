@@ -10,9 +10,9 @@ const BlogRow = (props) => {
               <td>{item.author}</td>
               <td>{item.created}</td>
               <td>
-                <button>Delete</button>
-                <NavLink to={`/admin/blog/edit/${item.id}`}>Edit</NavLink>
-                <button>View</button>
+                <button className="btn-danger">Delete</button> &nbsp;
+                <NavLink to={`/admin/blog/edit/${item.id}`} className="btn-default">Edit</NavLink> &nbsp;
+                <button className="btn-primary">View</button>
               </td>
             </tr>
           )

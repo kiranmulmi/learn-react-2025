@@ -72,23 +72,24 @@ const BlogForm = () => {
     <div>
       { id && <h1>Edit Blog</h1>}
       { !id && <h1>Create Blog</h1>}
-
-      <div>
-        <label htmlFor="title">Title</label>
-        <input type="text" id="title" name="title" value={data.title} onChange={handleChange} />
-        {errors.title && <p className="error">{errors.title}</p>}
-      </div>
-      <br />
-      <div>
-        <label htmlFor="content">Content</label>
-        <div className="editor">
-          <textarea id="content" name="content" rows="10" style={{width: "100%"}} onChange={handleChange} value={data.content}/>
-          {errors.content && <p className="error">{errors.content}</p>}
+      <div className="blog-form">
+        <div>
+          <label htmlFor="title">Title</label>
+          <input type="text" id="title" name="title" value={data.title} onChange={handleChange} />
+          {errors.title && <p className="error">{errors.title}</p>}
         </div>
-      </div>
-      <br />
-      <div>
-        <button className="btn-primary" onClick={handleSubmit}>Save</button>
+        <br />
+        <div>
+          <label htmlFor="content">Content</label>
+          <div className="editor">
+            <textarea id="content" name="content" rows="10" style={{width: "100%"}} onChange={handleChange} value={data.content}/>
+            {errors.content && <p className="error">{errors.content}</p>}
+          </div>
+        </div>
+        <br />
+        <div>
+          <button className="btn-primary" onClick={handleSubmit}>Save</button>
+        </div>
       </div>
     </div>
   )
