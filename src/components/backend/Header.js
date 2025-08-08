@@ -8,8 +8,8 @@ const Header = () => {
   }
 
   return (
-    <div class="row">
-      <div class="header">
+    <div className="row">
+      <div className="header">
         <h2>Header</h2>
         <div><button onClick={() => handleBtnClick()} className="btn-danger">Logout</button></div>
       </div>

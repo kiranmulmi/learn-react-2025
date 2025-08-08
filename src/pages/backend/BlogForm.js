@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import { createBlog, getBlogById } from "../../services/blog";
+import { createBlog, getBlogById, updateBlog } from "../../services/blog";
 
 const BlogForm = () => {
   const navigate = useNavigate();
@@ -56,13 +56,25 @@ const BlogForm = () => {
     setErrors(validationErrors);
     if (!hasError) {
       // FORM IS VALID
-      createBlog(data)
+      if(id) {
+        // UPDATE BLOG
+        updateBlog(id, data)
+          .then((response) => {
+            navigate('/admin/blog');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        // CREATE BLOG
+        createBlog(data)
         .then((response) => {
           navigate('/admin/blog');
         })
         .catch((error) => {
           console.log(error);
-        });
+        }); 
+      }
     } else {
       console.log('has error');
     }

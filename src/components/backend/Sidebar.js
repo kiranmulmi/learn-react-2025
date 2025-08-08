@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 const Sidebar = () => {
   return (
     <>
-      <div class="col sidebar">
+      <div className="col sidebar">
         <h2>Admin Menu</h2>
         <div>
           <ul>

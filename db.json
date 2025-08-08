@@ -1,29 +1,12 @@
 {
   "blogs": [
     {
-      "title": "abc",
-      "content": "abc content",
+      "title": "abc updated",
+      "content": "abc content updated",
+      "author": "admin",
+      "created_at": "2025-08-08T02:49:27.433Z",
+      "updated_at": "2025-08-08T02:49:27.433Z",
       "id": "1"
-    },
-    {
-      "id": "2",
-      "title": "another title 2",
-      "content": "some other content"
-    },
-    {
-      "id": "3",
-      "title": "another title 3",
-      "content": "some other content"
-    },
-    {
-      "id": "5",
-      "title": "title 5",
-      "content": "content 5"
-    },
-    {
-      "id": "0d71",
-      "title": "title 5",
-      "content": "content 5"
     },
     {
       "id": "c726",
@@ -34,20 +17,20 @@
       "updated_at": "2025-08-08T01:59:07.571Z"
     },
     {
-      "id": "f1c1",
-      "title": "Porro et autem perfe",
-      "content": "Quia id hic id eius ",
-      "author": "admin",
-      "created_at": "2025-08-08T02:00:50.920Z",
-      "updated_at": "2025-08-08T02:00:50.920Z"
-    },
-    {
       "id": "3b59",
       "title": "Cupiditate odio exce",
       "content": "Sint vel porro mini",
       "author": "admin",
       "created_at": "2025-08-08T02:01:11.933Z",
       "updated_at": "2025-08-08T02:01:11.933Z"
+    },
+    {
+      "id": "8f8e",
+      "title": "Id dicta iure aut i",
+      "content": "Libero commodo iure ",
+      "author": "admin",
+      "created_at": "2025-08-08T03:39:57.907Z",
+      "updated_at": "2025-08-08T03:39:57.907Z"
     }
   ],
   "users": [

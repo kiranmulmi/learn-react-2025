@@ -13,11 +13,11 @@ const AdminLayout = () => {
   }, []);
   
   return (
-    <div class="container">
+    <div className="container">
       <Header />
-      <div class="row main-wrapper">
+      <div className="row main-wrapper">
         <Sidebar />
-        <div class="col main-body">
+        <div className="col main-body">
           <Outlet />
         </div>
       </div>

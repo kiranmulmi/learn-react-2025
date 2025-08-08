@@ -8,11 +8,10 @@ const BlogRow = (props) => {
             <tr key={index}>
               <td>{item.title}</td>
               <td>{item.author}</td>
-              <td>{item.created}</td>
+              <td>{item.created_at}</td>
               <td>
-                <button className="btn-danger">Delete</button> &nbsp;
+                <button className="btn-danger" onClick={() => props.handleDelete(item.id)}>Delete</button> &nbsp;
                 <NavLink to={`/admin/blog/edit/${item.id}`} className="btn-default">Edit</NavLink> &nbsp;
-                <button className="btn-primary">View</button>
               </td>
             </tr>
           )

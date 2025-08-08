@@ -31,3 +31,25 @@ export const createBlog = async (blogData) => {
     throw error;
   }
 }
+
+export const updateBlog = async (id, blogData) => {
+  try {
+    const response = await axios.put(`http://localhost:4000/blogs/${id}`,
+      blogData
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export const deleteBlog = async (id) => {
+  try {
+    const response = await axios.delete(`http://localhost:4000/blogs/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
