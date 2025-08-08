@@ -119,3 +119,7 @@ input {
   text-decoration: none;
   color: #ffffff;
  }
+
+ .error {
+  color: red;
+ }

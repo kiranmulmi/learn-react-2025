@@ -21,3 +21,13 @@ export const getBlogById = async (id) => {
   const response = await axios.get(`http://localhost:4000/blogs/${id}`);
   return response.data;
 }
+
+export const createBlog = async (blogData) => {
+  try {
+    const response = await axios.post('http://localhost:4000/blogs', blogData);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}

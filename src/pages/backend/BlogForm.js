@@ -1,14 +1,22 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
-import { getBlogById } from "../../services/blog";
+import { useParams, useNavigate } from "react-router";
+import { createBlog, getBlogById } from "../../services/blog";
 
 const BlogForm = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   
   const [data, setData] = useState({
     title: '',
     content: '',
     author: localStorage.getItem('USER_EMAIL'),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  });
+
+  const [errors, setErrors] = useState({
+    title: '',
+    content: '',
   });
 
   const handleChange = (e) => {
@@ -28,7 +36,37 @@ const BlogForm = () => {
         );
       });
     }
-  }, [])
+  }, []);
+
+  const handleSubmit = () => {
+    let hasError = false;
+    let validationErrors = {
+      title: '',
+      content: '',
+    };
+    if (data.title.trim() === '') {
+      validationErrors.title = 'Title is required';
+      hasError = true;
+    } 
+    if (data.content.trim() === '') {
+      validationErrors.content = 'Content is required';
+      hasError = true;
+    }
+
+    setErrors(validationErrors);
+    if (!hasError) {
+      // FORM IS VALID
+      createBlog(data)
+        .then((response) => {
+          navigate('/admin/blog');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      console.log('has error');
+    }
+  }
 
   return (
     <div>
@@ -38,17 +76,19 @@ const BlogForm = () => {
       <div>
         <label htmlFor="title">Title</label>
         <input type="text" id="title" name="title" value={data.title} onChange={handleChange} />
+        {errors.title && <p className="error">{errors.title}</p>}
       </div>
+      <br />
       <div>
         <label htmlFor="content">Content</label>
         <div className="editor">
           <textarea id="content" name="content" rows="10" style={{width: "100%"}} onChange={handleChange} value={data.content}/>
+          {errors.content && <p className="error">{errors.content}</p>}
         </div>
       </div>
+      <br />
       <div>
-        <button className="btn-primary" onClick={() => {
-          console.log(data);
-        }}>Save</button>
+        <button className="btn-primary" onClick={handleSubmit}>Save</button>
       </div>
     </div>
   )
