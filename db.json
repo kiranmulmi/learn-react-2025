@@ -17,20 +17,20 @@
       "updated_at": "2025-08-08T01:59:07.571Z"
     },
     {
-      "id": "3b59",
       "title": "Cupiditate odio exce",
       "content": "Sint vel porro mini",
       "author": "admin",
-      "created_at": "2025-08-08T02:01:11.933Z",
-      "updated_at": "2025-08-08T02:01:11.933Z"
+      "created_at": "2025-08-08T04:43:58.848Z",
+      "updated_at": "2025-08-08T04:43:58.848Z",
+      "id": "3b59"
     },
     {
-      "id": "8f8e",
       "title": "Id dicta iure aut i",
       "content": "Libero commodo iure ",
       "author": "admin",
-      "created_at": "2025-08-08T03:39:57.907Z",
-      "updated_at": "2025-08-08T03:39:57.907Z"
+      "created_at": "2025-08-08T04:43:56.156Z",
+      "updated_at": "2025-08-08T04:43:56.156Z",
+      "id": "8f8e"
     }
   ],
   "users": [
@@ -54,6 +54,41 @@
       "email": "jim@doe.com",
       "password": "123456",
       "phone": "12344567"
+    },
+    {
+      "id": "57b3",
+      "name": "Isaac Emerson",
+      "email": "vacana@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (614) 584-2862"
+    },
+    {
+      "name": "Audra Brown updated",
+      "email": "civom@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (227) 842-6361",
+      "id": "f4a0"
+    },
+    {
+      "id": "d326",
+      "name": "Herrod Walters",
+      "email": "rujawyrom@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "phone": "+1 (738) 359-1766"
+    },
+    {
+      "id": "5d2b",
+      "name": "Rana Shepherd",
+      "email": "lequsofuve@mailinator.com",
+      "password": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+      "phone": "+1 (246) 927-7759"
+    },
+    {
+      "id": "4895",
+      "name": "Savannah Bradshaw",
+      "email": "somimipe@mailinator.com",
+      "password": "b2fe8b46929bfa4c65fee9d5d43a2423799b18e360782e9abc27bd420877243e",
+      "phone": "+1 (827) 774-4343"
     }
   ]
 }

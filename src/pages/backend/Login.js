@@ -22,7 +22,7 @@ const Login = () => {
   }
 
   // Handle Form Submission
-  const handleBtnClick = () => {
+  const handleBtnClick = async () => {
     let error = false;
     if (email === '') {
       setEmailError("Email is required");
@@ -35,7 +35,7 @@ const Login = () => {
     if (error) {
       return;
     }
-    const loginStatus = doLogin(email, password);
+    const loginStatus = await doLogin(email, password);
     if (loginStatus) {
       navigate('/admin/dashboard');
     } else {
