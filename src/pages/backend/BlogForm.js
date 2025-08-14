@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
+import { toast } from 'react-toastify';
 import { createBlog, getBlogById, updateBlog } from "../../services/blog";
 
 const BlogForm = () => {
@@ -61,6 +62,7 @@ const BlogForm = () => {
         updateBlog(id, data)
           .then((response) => {
             navigate('/admin/blog');
+            toast.success('Blog updated successfully');
           })
           .catch((error) => {
             console.log(error);

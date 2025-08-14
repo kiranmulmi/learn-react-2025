@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router";
 import { doLogin } from '../../services/auth';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,8 +38,10 @@ const Login = () => {
     }
     const loginStatus = await doLogin(email, password);
     if (loginStatus) {
+      toast.success(`Login successful, welcome ${email}`);
       navigate('/admin/dashboard');
     } else {
+      toast.error("Invalid email or password");
       setLoginError('Invalid email or password');
     }
 

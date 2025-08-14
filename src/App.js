@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router";
+import { ToastContainer } from 'react-toastify';
 import Home from './pages/frontend/Home';
 import Dashboard from './pages/backend/Dashboard';
 import AdminLayout from './components/backend/AdminLayout';
@@ -10,7 +11,7 @@ import Blog from './pages/backend/Blog';
 import BlogForm from './pages/backend/BlogForm';
 import UserForm from './pages/backend/UserForm';
 import User from './pages/backend/User';
-
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   return (
@@ -38,6 +39,7 @@ function App() {
             </Route>
           </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }
