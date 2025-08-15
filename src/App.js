@@ -12,6 +12,7 @@ import BlogForm from './pages/backend/BlogForm';
 import UserForm from './pages/backend/UserForm';
 import User from './pages/backend/User';
 import 'react-toastify/dist/ReactToastify.css';
+import FrontendLayout from './components/frontend/FrontendLayout';
 function App() {
 
   return (
@@ -19,7 +20,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             {/* Frontend Routes */}
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<FrontendLayout />}>
               <Route path="/home" element={<Home />} />
               <Route path="/contact-us" element={<ContactUs />} />
             </Route>

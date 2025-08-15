@@ -1,15 +1,37 @@
-import { NavLink } from "react-router";
+import { useEffect, useState } from 'react';
+import { Card } from 'antd';
+import { getAllBlogs } from '../../services/blog';
 function Home() {
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const blogs = await getAllBlogs();
+      setBlogs(blogs);
+    }
+    fetchBlogs();
+  }, []);
   return (
-    <div>
-      <h1>Home page</h1>
-      <p>Welcome to the home page of our application!</p>
-      <p>Here you can find various features and functionalities.</p>
-      <p>Feel free to explore the application.</p>
-      <p>To get started, you can navigate to the following sections:</p>
-      <p><NavLink to="/admin/dashboard">Admin Dashboard</NavLink></p>
-      <p><NavLink to="/contact-us">Contact Us</NavLink></p>
-    </div>
+    <Card title="Latest Blogs">
+      {
+        blogs.map((blog) => (
+          <Card
+            style={{ marginTop: 16 }}
+            type="inner"
+            title={blog.title}
+            extra={<a href="#">More</a>}
+          >
+            {blog.content}
+            <br />
+            <br />
+            <div>
+              <i>
+                Create by : {blog.author}, <i>{blog.created_at}</i>
+              </i>
+            </div>
+          </Card>
+        ))
+      }
+  </Card>
   );
 }
 
